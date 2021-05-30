@@ -1,0 +1,19 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9000/eureka/
+
+spring:
+  application:
+    name: zuul-api-gateway-server
+ribbon:
+  eureka:
+    enabled: false
+
+zuul:
+  routes:
+    account-service:
+      url: http://localhost:9092
